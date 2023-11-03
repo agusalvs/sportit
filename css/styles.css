@@ -82,7 +82,7 @@ a:active, a:link, a:visited {
     font-weight: 500;
     color:  #242E52;
     line-height: 176.1%;
-    padding: 0px 10%
+    padding: 0px 10%;
 }
 
 .burger {
@@ -336,7 +336,7 @@ footer a {
 
 /* -- Desktop version -- */
 /* Starts at 1360px para poder ver en pantalla completa segùn mi resolución"*/
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
     /*Desktop*/
     .btn-big, .players-container, 
     .head, .container, .comment, 
@@ -351,7 +351,18 @@ footer a {
 
 /* <!-- Header --> */
     .burger {
-        display: none;
+        display: none; /* Ocultar el menú hamburguesa */
+    }
+    .menu-list {
+        display: block; /* Mostrar la lista de menú */
+    } 
+    .menu-list {
+        display: flex; /* Mostrar la lista de menú en línea */
+    }
+    .menu-list li {
+        margin: 0 15px; /* Agregar margen entre los elementos de la lista */
+        display: inline;
+        white-space: nowrap; /* Esto evitará que el texto se divida en varias líneas */    
     }
 
 /* -- Cards -- */
@@ -402,3 +413,25 @@ footer a {
         padding: 0px 10px;
     }
 }
+
+/* Estilos para pantallas pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    .burger {
+        display: block; /* Mostrar el menú hamburguesa */
+    }
+    .menu-list {
+        display: none; /* Ocultar la lista de menú */
+        position: absolute;
+        top: 100%; /* Aparecer debajo del menú hamburguesa */
+        left: 0; /* Alinear con el borde izquierdo */
+        background-color: #FFFFFF; /* Cambiar el fondo para que se destaque */
+        z-index: 1; /* Asegurarse de que esté encima del contenido */
+        width: 100%; /* Ocupar todo el ancho */
+    }
+    .menu-list li {
+        text-align: center; /* Centrar el texto dentro de la lista */
+        padding: 10px 0; /* Agregar espacio alrededor del texto */
+        border-bottom: 1px solid #ccc; /* Agregar separadores entre elementos de la lista */
+    }
+}
+
